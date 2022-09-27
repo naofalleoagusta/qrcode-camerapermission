@@ -22,7 +22,6 @@ const constraints = {
       ideal: 1080,
       max: 1440,
     },
-    facingMode: "enviroment",
   },
 };
 
@@ -54,6 +53,7 @@ play.onclick = () => {
 };
 
 const startStream = async (constraints) => {
+  constraints.video.facingMode = "environment";
   const stream = await navigator.mediaDevices.getUserMedia(constraints);
   handleStream(stream);
 };
